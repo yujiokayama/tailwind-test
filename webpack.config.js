@@ -54,14 +54,14 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
+              ident: 'postcss',
               // PostCSS側でもソースマップを有効にする
               sourceMap: enabledSourceMap,
               plugins: [
+                // tailwindcss
+                require('tailwindcss'),
                 // Autoprefixerを有効化
-                // ベンダープレフィックスを自動付与する
-                require('autoprefixer')({
-                  grid: true
-                })
+                require('autoprefixer')
               ]
             }
           },
